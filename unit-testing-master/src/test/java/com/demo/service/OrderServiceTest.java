@@ -26,7 +26,6 @@ public class OrderServiceTest {
     @Test(expected = RuntimeException.class)
     public void placeOrder() {
         //Given
-        OrderService orderService = new OrderService();
         Order order = new Order(5, "Lays", 50);
 
         //When
@@ -39,9 +38,7 @@ public class OrderServiceTest {
     @Test
     public void testPlaceOrder() {
         //Given
-        OrderService orderService = new OrderService();
         Order order = new Order(5, "Lays", 50);
-        EmailService emailService = new EmailService();
 
         //When
         when(orderServiceMock.placeOrder(order, "sarveshh.arora@tothenew.com")).thenReturn(true);
